@@ -8,7 +8,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = clang++
 
-FLAG = -Wall -Werror -Wextra -g
+FLAG = -Wall -Werror -Wextra
 
 OPTIONOBJ = -o
 
