@@ -1,9 +1,9 @@
-.PHONY: all clean bonus fclean re run
+.PHONY: all clean bonus fclean re
+
+NAME = phonebook
 
 HEADERS = Contact_class.hpp \
           Phonebook_class.hpp
-
-NAME = phonebook
 
 SRC = main.cpp \
       Contact_class.cpp \
@@ -29,11 +29,11 @@ MAGENTA ='\033[1;35m'
 
 all: $(NAME)
 
-$(NAME): $(HEADER) $(SRC)
+$(NAME): $(HEADERS) $(SRC)
 	@$(CC) $(FLAG) $(SRC) $(OPTIONOBJ) $(NAME)
 	@echo $(GREEN)"Phonebook is done!"$(WHITE)
 
-%.o: %.c $(HEADER)
+%.o: %.c $(HEADERS) $(SRC)
 	$(CC) $(FLAG) $< $(OPTIONOBJ) $@
 
 clean:

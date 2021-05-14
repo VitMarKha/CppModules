@@ -1,10 +1,8 @@
-.PHONY: all clean bonus fclean re run
+.PHONY: all clean bonus fclean re
 
 NAME = megaphone
 
 SRC = megaphone.cpp
-
-OBJ = $(SRC:.c=.o)
 
 CC = clang++
 
@@ -34,7 +32,7 @@ $(NAME): $(HEADER) $(SRC)
 	$(CC) $(FLAG) $< $(OPTIONOBJ) $@
 
 clean:
-	@$(DEL) $(OBJ)
+	@$(DEL) $(NAME)
 	@echo $(GREEN)"All 'o' files deleted."$(WHITE)
 
 fclean: clean
