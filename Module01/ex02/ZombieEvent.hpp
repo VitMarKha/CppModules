@@ -3,14 +3,16 @@
 
 #include <iostream>
 #include "Zombie.hpp"
+
 using std::string;
 
 class ZombieEvent {
+public:
     void setZombieType(const int &new_type);
 
-    Zombie *newZombie(string name);
+    Zombie *newZombie(const string &name) const;
 
-    Zombie *randomChump();
+    Zombie *randomChump(const int &rand_num);
 
 private:
     int _type;

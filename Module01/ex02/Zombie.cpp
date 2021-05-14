@@ -20,4 +20,6 @@ void Zombie::announce() const {
     cout << getName() << " (" << getType() << ") Braiiiiiiinnnssss..." << endl;
 }
 
-
+Zombie::~Zombie() {
+    cout << "Zombie " << this->getName() << "with type " << this->getType() << "is dead!" << endl;
+}

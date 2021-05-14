@@ -2,7 +2,6 @@
 #define EX02_ZOMBIE_HPP
 
 #include <iostream>
-#include "ZombieEvent.hpp"
 
 using std::string;
 using std::cout;
@@ -17,6 +16,8 @@ public:
     int getType() const;
 
     void announce() const;
+
+    ~Zombie();
 
 private:
     string  _name;
