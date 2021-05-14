@@ -1,9 +1,9 @@
-#include "Phonebook.hpp"
+#include "Phonebook_class.hpp"
 
 void Phonebook::SetContact(const Contact& contact, const int& number) {
-	_contacts[number] = contact;
+    _contacts[number] = contact;
 }
 
 Contact Phonebook::GetContact(const int &number) const {
-	return _contacts[number];
+    return _contacts[number];
 }
