@@ -17,9 +17,9 @@ int Zombie::getType() const {
 }
 
 void Zombie::announce() const {
-    cout << getName() << " (" << getType() << ") Braiiiiiiinnnssss..." << endl;
+    cout << this->_name << " (" << this->_type << ") Braiiiiiiinnnssss..." << endl;
 }
 
 Zombie::~Zombie() {
-    cout << "Zombie " << this->getName() << "with type " << this->getType() << "is dead!" << endl;
+    cout << "Zombie " << this->_name << " with type " << this->_type << " is dead!" << endl;
 }
