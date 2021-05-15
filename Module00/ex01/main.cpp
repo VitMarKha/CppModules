@@ -15,84 +15,84 @@ static	int	set_info(Contact& contact) {
 	getline(cin, text);
 	if (cin.eof())
 		return 1;
-	contact.SetFirstName(text);
+	contact.setFirstName(text);
 	cout << "Please enter last name: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetLastName(text);
+	contact.setLastName(text);
 	cout << "Please enter nickname: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetNickname(text);
+	contact.setNickname(text);
 	cout << "Please enter login: ";
 	getline(cin, text);
 	if (cin.eof())
 		return 1;
-	contact.SetLogin(text);
+	contact.setLogin(text);
 	cout << "Please enter postal address: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetPostalAddress(text);
+	contact.setPostalAddress(text);
 	cout << "Please enter email address: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetAddress(text);
+	contact.setAddress(text);
 	cout << "Please enter phone number: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetPhoneNumber(text);
+	contact.setPhoneNumber(text);
 	cout << "Please enter birthday date: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetBirthdayDate(text);
+	contact.setBirthdayDate(text);
 	cout << "Please enter favorite meal: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetFavoriteMeal(text);
+	contact.setFavoriteMeal(text);
 	cout << "Please enter underwear color: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetUnderwearColor(text);
+	contact.setUnderwearColor(text);
 	cout << "Please enter darkest secret: ";
 	getline(cin, text);
 	if (cin.eof()) {
 		return 1;
 	}
-	contact.SetDarkestSecret(text);
+	contact.setDarkestSecret(text);
 	return 0;
 }
 
 static void print_contact(const Phonebook& phonebook, const int& id_search) {
     cout << "Contact information with id " << id_search << endl;
     cout << "+-------------------------------------------+" << endl;
-    cout << phonebook.GetContact(id_search).GetFirstName() << endl;
-    cout << phonebook.GetContact(id_search).GetLastName() << endl;
-    cout << phonebook.GetContact(id_search).GetNickname() << endl;
-    cout << phonebook.GetContact(id_search).GetLogin() << endl;
-    cout << phonebook.GetContact(id_search).GetPostalAddress();
-    cout << phonebook.GetContact(id_search).GetEmail() << endl;
-    cout << phonebook.GetContact(id_search).GetAddress() << endl;
-    cout << phonebook.GetContact(id_search).GetPhoneNumber() << endl;
-    cout << phonebook.GetContact(id_search).GetBirthdayDate() << endl;
-    cout << phonebook.GetContact(id_search).GetFavoriteMeal() << endl;
-    cout << phonebook.GetContact(id_search).GetUnderwearColor() << endl;
-    cout << phonebook.GetContact(id_search).GetDarkestSecret() << endl;
+    cout << phonebook.getContact(id_search).getFirstName() << endl;
+    cout << phonebook.getContact(id_search).getLastName() << endl;
+    cout << phonebook.getContact(id_search).getNickname() << endl;
+    cout << phonebook.getContact(id_search).getLogin() << endl;
+    cout << phonebook.getContact(id_search).getPostalAddress();
+    cout << phonebook.getContact(id_search).getEmail() << endl;
+    cout << phonebook.getContact(id_search).getAddress() << endl;
+    cout << phonebook.getContact(id_search).getPhoneNumber() << endl;
+    cout << phonebook.getContact(id_search).getBirthdayDate() << endl;
+    cout << phonebook.getContact(id_search).getFavoriteMeal() << endl;
+    cout << phonebook.getContact(id_search).getUnderwearColor() << endl;
+    cout << phonebook.getContact(id_search).getDarkestSecret() << endl;
     cout << "+-------------------------------------------+" << endl;
 }
 
@@ -113,9 +113,9 @@ static void print_table(const Phonebook& phonebook, const int& id, int& i) {
     while (++i < (id + 1)) {
         cout << "+-------------------------------------------+" << endl;
         cout << "|" << setw(10) << i << "|" << setw(10)
-             << sub_str(phonebook.GetContact(i).GetFirstName()) << "|"
-             << setw(10) << sub_str(phonebook.GetContact(i).GetLastName())
-             << "|" << setw(10) << sub_str(phonebook.GetContact(i).GetNickname()) << "|" << endl;
+			 << sub_str(phonebook.getContact(i).getFirstName()) << "|"
+			 << setw(10) << sub_str(phonebook.getContact(i).getLastName())
+			 << "|" << setw(10) << sub_str(phonebook.getContact(i).getNickname()) << "|" << endl;
     }
     cout << "+-------------------------------------------+" << endl;
     cout << "Enter the subscriber ID: ";
@@ -148,7 +148,7 @@ int main() {
 			if (set_info(contact))
 				break ;
 			id += 1;
-			phonebook.SetContact(contact, id);
+			phonebook.setContact(contact, id);
 		} else if (command == "SEARCH") {
 			if (id != -1)
 				i = -1;

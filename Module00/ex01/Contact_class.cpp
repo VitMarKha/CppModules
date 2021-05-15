@@ -1,115 +1,115 @@
 #include "Contact_class.hpp"
 #include <iostream>
 
-string Contact::GetFirstName() const {
+string Contact::getFirstName() const {
     return _first_name;
 }
 
-string Contact::GetLastName() const {
+string Contact::getLastName() const {
     return _last_name;
 }
 
-string Contact::GetNickname() const {
+string Contact::getNickname() const {
     return _nickname;
 }
 
-string Contact::GetPostalAddress() const {
+string Contact::getPostalAddress() const {
     return _postal_address;
 }
 
-string Contact::GetLogin() const {
+string Contact::getLogin() const {
     return _login;
 }
 
-string Contact::GetEmail() const {
+string Contact::getEmail() const {
     return _email;
 }
 
-string Contact::GetAddress() const {
+string Contact::getAddress() const {
     return _address;
 }
 
-string Contact::GetPhoneNumber() const {
+string Contact::getPhoneNumber() const {
     return _phone_number;
 }
 
-string Contact::GetBirthdayDate() const {
+string Contact::getBirthdayDate() const {
     return _birthday_date;
 }
 
-string Contact::GetFavoriteMeal() const {
+string Contact::getFavoriteMeal() const {
     return _favorite_meal;
 }
 
-string Contact::GetUnderwearColor() const {
+string Contact::getUnderwearColor() const {
     return _underwear_color;
 }
 
-string Contact::GetDarkestSecret() const {
+string Contact::getDarkestSecret() const {
     return _darkest_secret;
 }
 
-void Contact::SetFirstName(const string& new_first_name) {
+void Contact::setFirstName(const string& new_first_name) {
     _first_name = new_first_name;
 }
 
-void Contact::SetLastName(const string& new_last_name) {
+void Contact::setLastName(const string& new_last_name) {
     _last_name = new_last_name;
 }
 
-void Contact::SetNickname(const string& new_nickname) {
+void Contact::setNickname(const string& new_nickname) {
     _nickname = new_nickname;
 }
 
-void Contact::SetPostalAddress(const string &new_postal_address) {
+void Contact::setPostalAddress(const string &new_postal_address) {
     _postal_address = new_postal_address;
 }
 
-void Contact::SetLogin(const string& new_email) {
+void Contact::setLogin(const string& new_email) {
     _email = new_email;
 }
 
-void Contact::SetEmail(const string &new_login) {
+void Contact::setEmail(const string &new_login) {
     _login = new_login;
 }
 
-void Contact::SetAddress(const string &new_address) {
+void Contact::setAddress(const string &new_address) {
     _address = new_address;
 }
 
-void Contact::SetPhoneNumber(const string &new_phone_number) {
+void Contact::setPhoneNumber(const string &new_phone_number) {
     _phone_number = new_phone_number;
 }
 
-void Contact::SetBirthdayDate(const string &new_birthday_date) {
+void Contact::setBirthdayDate(const string &new_birthday_date) {
     _birthday_date = new_birthday_date;
 }
 
-void Contact::SetFavoriteMeal(const string &new_favorite_meal) {
+void Contact::setFavoriteMeal(const string &new_favorite_meal) {
     _favorite_meal = new_favorite_meal;
 
 }
 
-void Contact::SetUnderwearColor(const string &new_underwear_color) {
+void Contact::setUnderwearColor(const string &new_underwear_color) {
     _underwear_color = new_underwear_color;
 }
 
-void Contact::SetDarkestSecret(const string &new_darkest_secret) {
+void Contact::setDarkestSecret(const string &new_darkest_secret) {
     _darkest_secret = new_darkest_secret;
 }
 
 Contact& Contact::operator=(const Contact& right) {
-    this->SetFirstName(right.GetFirstName());
-    this->SetLastName(right.GetLastName());
-    this->SetNickname(right.GetNickname());
-    this->SetLogin(right.GetLogin());
-    this->SetPostalAddress(right.GetPostalAddress());
-    this->SetEmail(right.GetEmail());
-    this->SetAddress(right.GetAddress());
-    this->SetPhoneNumber(right.GetPhoneNumber());
-    this->SetBirthdayDate(right.GetBirthdayDate());
-    this->SetFavoriteMeal(right.GetFavoriteMeal());
-    this->SetUnderwearColor(right.GetUnderwearColor());
-    this->SetDarkestSecret(right.GetDarkestSecret());
+	this->setFirstName(right.getFirstName());
+	this->setLastName(right.getLastName());
+	this->setNickname(right.getNickname());
+	this->setLogin(right.getLogin());
+	this->setPostalAddress(right.getPostalAddress());
+	this->setEmail(right.getEmail());
+	this->setAddress(right.getAddress());
+	this->setPhoneNumber(right.getPhoneNumber());
+	this->setBirthdayDate(right.getBirthdayDate());
+	this->setFavoriteMeal(right.getFavoriteMeal());
+	this->setUnderwearColor(right.getUnderwearColor());
+	this->setDarkestSecret(right.getDarkestSecret());
     return *this;
 }

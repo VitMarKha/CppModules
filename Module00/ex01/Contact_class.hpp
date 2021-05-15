@@ -6,31 +6,31 @@ using std::string;
 
 class Contact {
 public:
-    string GetFirstName() const;
-    string GetLastName() const;
-    string GetNickname() const;
-    string GetPostalAddress() const;
-    string GetLogin() const;
-    string GetEmail() const;
-    string GetAddress() const;
-    string GetPhoneNumber() const;
-    string GetBirthdayDate() const;
-    string GetFavoriteMeal() const;
-    string GetUnderwearColor() const;
-    string GetDarkestSecret() const;
+    string getFirstName() const;
+    string getLastName() const;
+    string getNickname() const;
+    string getPostalAddress() const;
+    string getLogin() const;
+    string getEmail() const;
+    string getAddress() const;
+    string getPhoneNumber() const;
+    string getBirthdayDate() const;
+    string getFavoriteMeal() const;
+    string getUnderwearColor() const;
+    string getDarkestSecret() const;
 
-    void SetFirstName(const string& new_first_name);
-    void SetLastName(const string& new_last_name);
-    void SetNickname(const string& new_nickname);
-    void SetPostalAddress(const string& new_postal_address);
-    void SetLogin(const string& new_email);
-    void SetEmail(const string& new_login);
-    void SetAddress(const string& new_address);
-    void SetPhoneNumber(const string& new_phone_number);
-    void SetBirthdayDate(const string& new_birthday_date);
-    void SetFavoriteMeal(const string& new_favorite_meal);
-    void SetUnderwearColor(const string& new_underwear_color);
-    void SetDarkestSecret(const string& new_darkest_secret);
+    void setFirstName(const string& new_first_name);
+    void setLastName(const string& new_last_name);
+    void setNickname(const string& new_nickname);
+    void setPostalAddress(const string& new_postal_address);
+    void setLogin(const string& new_email);
+    void setEmail(const string& new_login);
+    void setAddress(const string& new_address);
+    void setPhoneNumber(const string& new_phone_number);
+    void setBirthdayDate(const string& new_birthday_date);
+    void setFavoriteMeal(const string& new_favorite_meal);
+    void setUnderwearColor(const string& new_underwear_color);
+    void setDarkestSecret(const string& new_darkest_secret);
 
     Contact& operator=(const Contact& right);
 

@@ -6,9 +6,9 @@
 class Phonebook {
 public:
 
-    Contact GetContact(const int& number) const;
+    Contact getContact(const int& number) const;
 
-    void SetContact(const Contact& contact, const int& number);
+    void setContact(const Contact& contact, const int& number);
 
 private:
     Contact _contacts[8];
