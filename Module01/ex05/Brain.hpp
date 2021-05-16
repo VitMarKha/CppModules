@@ -2,17 +2,23 @@
 #define EX05_BRAIN_HPP
 
 #include <iostream>
+#include <sstream>
 
+using std::ostringstream;
 using std::string;
 using std::cout;
 using std::endl;
 
 class Brain {
 public:
-	string* identify();
+	string identify();
+
+	Brain();
+
+	Brain(const int& new_iq);
 
 private:
-	string *_id;
+	int _iq;
 };
 
 #endif

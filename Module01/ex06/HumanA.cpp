@@ -4,23 +4,12 @@ void HumanA::attack() const {
 	cout << this->_name << " attacks with his " << this->_weapon.getType() << endl;
 }
 
-void HumanA::setWeapon(const Weapon& new_weapon) {
+void HumanA::setWeapon(Weapon& new_weapon) {
 	this->_weapon = new_weapon;
 }
 
-HumanA::HumanA() {
-	this->_name = "Maks";
-	this->_weapon = Weapon();
-}
-
-HumanA::HumanA(const string &new_name) {
+HumanA::HumanA(const string& new_name, Weapon& new_type_weapon) : _weapon(new_type_weapon) {
 	this->_name = new_name;
-	this->_weapon = Weapon();
-}
-
-HumanA::HumanA(const string& new_name, const Weapon& new_type_weapon) {
-	this->_name = new_name;
-	this->_weapon = new_type_weapon;
 }
 
 HumanA::~HumanA() {

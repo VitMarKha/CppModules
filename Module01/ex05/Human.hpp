@@ -5,13 +5,12 @@
 
 class Human {
 public:
-	string* identify();
+	string identify();
 
-	Brain getBrain();
+	Brain& getBrain();
 
 private:
 	Brain _brain;
 };
-
 
 #endif
