@@ -21,7 +21,7 @@ public:
 	void	setRawBits(const int raw);
 
 private:
-	int fix_point;
+	int _fix_point;
 	static int bits;
 };
 
