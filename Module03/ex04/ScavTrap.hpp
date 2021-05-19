@@ -1,5 +1,5 @@
-#ifndef EX03_SCAVTRAP_HPP
-#define EX03_SCAVTRAP_HPP
+#ifndef EX04_SCAVTRAP_HPP
+#define EX04_SCAVTRAP_HPP
 
 #include <iostream>
 #include "ClapTrap.hpp"
