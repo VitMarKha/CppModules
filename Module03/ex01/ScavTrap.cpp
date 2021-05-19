@@ -1,8 +1,8 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(const string& name) : _hit_point(100), _max_hit_points(100), _energy_points(50), \
-	_max_energy_points(50), _level(1), _name(name), _melee_attack_damage(30), _ranged_attack_damage(20), \
-	_armor_damage_reduction(5) {
+	_max_energy_points(50), _level(1), _name(name), _melee_attack_damage(20), _ranged_attack_damage(15), \
+	_armor_damage_reduction(3) {
 	cout << "Scav trap " << this->_name << " was created!" << endl;
 }
 
@@ -26,12 +26,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &scavTrap) {
 }
 
 void ScavTrap::rangedAttack(const string &target) {
-	cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " \
+	cout << "Scav trap " << this->_name << " attacks " << target << " at range, causing " \
 		<< this->_ranged_attack_damage << " points of damage!" << endl;
 }
 
 void ScavTrap::meleeAttack(const string &target) {
-	cout << "FR4G-TP " << this->_name << " attacks " << target << " at melee, causing " \
+	cout << "Scav trap " << this->_name << " attacks " << target << " at melee, causing " \
 		<< this->_melee_attack_damage << " points of damage!" << endl;
 }
 
