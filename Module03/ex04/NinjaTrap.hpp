@@ -10,7 +10,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class NinjaTrap :virtual public ClapTrap {
+class NinjaTrap : virtual public ClapTrap {
 public:
 	NinjaTrap(const string& name);
 
