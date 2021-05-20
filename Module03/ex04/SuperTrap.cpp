@@ -1,6 +1,6 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(const string& name) : FragTrap(name), NinjaTrap(name) {
+SuperTrap::SuperTrap(const string& name) : ClapTrap(name), FragTrap(name), NinjaTrap(name) {
 	cout << "Super Trap " << this->_name << " was created!" << endl;
 	this->_hit_point = FragTrap::_hit_point;
 	this->_max_hit_points = FragTrap::_max_hit_points;
@@ -12,7 +12,7 @@ SuperTrap::SuperTrap(const string& name) : FragTrap(name), NinjaTrap(name) {
 	this->_armor_damage_reduction = FragTrap::_armor_damage_reduction;
 }
 
-SuperTrap::SuperTrap(const SuperTrap &superTrap) : FragTrap(superTrap._name), NinjaTrap(superTrap._name) {}
+SuperTrap::SuperTrap(const SuperTrap &superTrap) : ClapTrap(superTrap._name), FragTrap(superTrap._name), NinjaTrap(superTrap._name) {}
 
 SuperTrap::~SuperTrap() {
 	cout << "Super Trap " << this->_name << " was disassembled!" << endl;

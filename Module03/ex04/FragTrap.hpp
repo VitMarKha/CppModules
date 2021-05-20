@@ -8,7 +8,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 public:
 	FragTrap(const string& name);
 
