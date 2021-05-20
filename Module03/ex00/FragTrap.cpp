@@ -74,7 +74,6 @@ void FragTrap::beRepaired(unsigned int amount) {
 
 void FragTrap::vaulthunter_dot_exe(const string &target) {
 	string names[5] = {"covertly", "surreptitiously" , "in the jump", "with your foot", "in the capture"};
-	int hits[2] = {0, 1};
 	if (this->_energy_points < 25)
 		cout << "Not enough power" << endl;
 	else {
