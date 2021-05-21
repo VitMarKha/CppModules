@@ -1,0 +1,4 @@
+#ifndef EX03_IMATERIASOURCE_HPP
+#define EX03_IMATERIASOURCE_HPP
+
+#endif
