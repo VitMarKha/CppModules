@@ -5,6 +5,13 @@
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
 
+
+static void my_test() {
+	ISpaceMarine* bob = new TacticalMarine;
+	ISpaceMarine* bob_clone = bob->clone();
+	bob_clone->rangedAttack();
+}
+
 int main() {
 	ISpaceMarine* bob = new TacticalMarine;
 	ISpaceMarine* jim = new AssaultTerminator;
@@ -19,5 +26,6 @@ int main() {
 		cur->meleeAttack();
 	}
 	delete vlc;
+	my_test();
 	return 0;
 }

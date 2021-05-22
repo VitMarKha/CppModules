@@ -1,6 +1,6 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(int hp, const string& type) : _hp(hp), _type(type) { }
+Enemy::Enemy(int hp, const string& type) : _type(type), _hp(hp) { }
 
 Enemy::Enemy(Enemy &enemy) { *this = enemy; }
 

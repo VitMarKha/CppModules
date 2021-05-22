@@ -8,12 +8,14 @@ using std::string;
 using std::cout;
 using std::endl;
 
+class ICharacter;
+
 class AMateria {
 public:
     AMateria(string const & type);
     virtual ~AMateria();
 
-    const string& getType() const;
+	const string&  getType() const;
 
     unsigned int getXP() const;
 
@@ -21,9 +23,9 @@ public:
 
     virtual void use(ICharacter& target);
 
-private:
-    const string        _type;
-    static unsigned int _xp;
+protected:
+    const string	_type;
+    unsigned int	_xp;
 };
 
 #endif

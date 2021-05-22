@@ -1,6 +1,6 @@
 #include "Squad.hpp"
 
-Squad::Squad() : _count(0), _squad(NULL) { }
+Squad::Squad() : _count(0), _squad(nullptr) { }
 
 Squad::Squad(Squad& squad) {
 	copy_sqad(squad);
@@ -13,7 +13,7 @@ Squad::~Squad() {
 Squad &Squad::operator=(const Squad &squad) {
 	if (this->_squad) {
 		delete_squad();
-		this->_squad = NULL;
+		this->_squad = nullptr;
 	}
 	copy_sqad(squad);
 	return *this;
@@ -23,7 +23,7 @@ int Squad::getCount() const { return this->_count; }
 
 ISpaceMarine* Squad::getUnit(int i) const {
 	if (i < 0 || i > this->_count || this->_count == 0)
-		return NULL;
+		return nullptr;
 	return this->_squad[i];
 }
 
@@ -37,14 +37,14 @@ int Squad::push(ISpaceMarine *iSpaceMarine) {
 		while (++i < this->_count)
 			if (this->_squad[i] == iSpaceMarine)
 				return this->_count;
-		ISpaceMarine** tmp = new ISpaceMarine*[this->_count + 1];
+		ISpaceMarine** new_squad = new ISpaceMarine*[this->_count + 1];
 		i = -1;
 		while (++i < this->_count)
-			tmp[i] = this->_squad[i];
-		tmp[i] = iSpaceMarine;
+			new_squad[i] = this->_squad[i];
+		new_squad[i] = iSpaceMarine;
 		++this->_count;
 		delete[] this->_squad;
-		this->_squad = tmp;
+		this->_squad = new_squad;
 	} else {
 		this->_count = 1;
 		this->_squad = new ISpaceMarine*[1];

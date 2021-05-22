@@ -5,7 +5,7 @@
 
 class Character : public ICharacter {
 public:
-    Character(string& name);
+    Character(string name);
     Character(Character& сharacter);
     virtual ~Character();
     Character&	operator=(const Character& сharacter);
@@ -20,7 +20,7 @@ public:
 
 private:
     string      _name;
-    AMateria**  _materia;
+    AMateria*  _materia[4];
 };
 
 #endif

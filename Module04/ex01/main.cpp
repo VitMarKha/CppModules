@@ -13,7 +13,6 @@ using std::endl;
 
 static void my_test() {
 	Character* me = new Character("me");
-	Character* me2 = new Character("me2");
 	cout << *me;
 	Enemy* b = new SuperMutant();
 	AWeapon* pr = new PlasmaRifle();
@@ -35,7 +34,9 @@ static void my_test() {
 	me->attack(b);
 	me->recoverAP();
 	me->attack(b);
-	cout << *me2;
+	delete b;
+	delete pr;
+	delete pf;
 }
 
 int main() {
@@ -55,6 +56,9 @@ int main() {
 	cout << *me;
 	me->attack(b);
 	cout << *me;
-//	my_test();
+	delete b;
+	delete pr;
+	delete pf;
+	my_test();
 	return 0;
 }

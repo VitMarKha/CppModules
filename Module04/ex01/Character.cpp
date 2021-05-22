@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character(const string &name) : _name(name), _ap(40), _aWeapon(NULL) { }
+Character::Character(const string &name) : _name(name), _ap(40), _aWeapon(nullptr) { }
 
 Character::Character(Character &character) { *this = character; }
 
@@ -22,7 +22,7 @@ void Character::recoverAP() {
 }
 
 void Character::attack(Enemy* enemy) {
-	if (this->_aWeapon != NULL && this->_ap > 0) {
+	if (this->_aWeapon != nullptr && this->_ap > 0) {
 		if (this->_aWeapon->getAPCost() > this->_ap) {
 			cout << "Not enough energy" << endl;
 		} else {
@@ -42,13 +42,13 @@ string Character::getName() const { return this->_name; }
 int Character::getAP() const { return this->_ap; }
 
 string Character::getAWeapon() const {
-	if (this->_aWeapon == NULL)
-		return "NULL";
+	if (this->_aWeapon == nullptr)
+		return "nullptr";
 	return this->_aWeapon->getName();
 }
 
 ostream& operator<<(ostream& out, const Character& character) {
-	if (character.getAWeapon() != "NULL") {
+	if (character.getAWeapon() != "nullptr") {
 		cout << character.getName() << " has " << character.getAP() << " AP and wields a " \
 		<< character.getAWeapon() << endl;
 	}

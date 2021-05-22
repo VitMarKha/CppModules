@@ -24,6 +24,6 @@ int main() {
 	std::cout << robert << jim << joe;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
-//	my_test();
+	my_test();
 	return 0;
 }
