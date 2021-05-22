@@ -7,10 +7,10 @@ class Peon : public Victim {
 public:
 	Peon(const string& name);
 	Peon(const Peon& peon);
-	~Peon();
+	virtual ~Peon();
 	Peon&	operator=(const Peon& peon);
 
-	void	getPolymorphed() const;
+	virtual void	getPolymorphed() const;
 };
 
 #endif

@@ -12,7 +12,7 @@ class Victim {
 public:
 	Victim(const string& name);
 	Victim(const Victim& victim);
-	~Victim();
+	virtual ~Victim();
 	Victim&	operator=(const Victim& victim);
 
 	virtual string	getName() const;
