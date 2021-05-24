@@ -16,10 +16,14 @@ void RobotomyRequestForm::action() {
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) {
     try {
-        if (this->getSigned() != true)
-            throw Exception_form("Form: " + this->getName() + " not signed");
-        else if (executor.getGrade() > this->getGradeExecute())
-            throw Exception_form("The bureaucrat: " + executor.getName() + " has a low score");
+        if (this->getSigned() != true) {
+			string error = "Form: " + this->getName() + " not signed";
+			throw Exception_form(error.c_str());
+		}
+        else if (executor.getGrade() > this->getGradeExecute()) {
+			string error = "The bureaucrat: " + executor.getName() + " has a low score";
+			throw Exception_form(error.c_str());
+		}
         this->action();
     }
     catch (Exception_form exceptionForm) {
@@ -27,3 +31,6 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) {
     }
 }
 
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &robotomyRequestForm) : Form(robotomyRequestForm){ }
+
+RobotomyRequestForm::~RobotomyRequestForm() { }

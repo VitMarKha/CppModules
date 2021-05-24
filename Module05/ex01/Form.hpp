@@ -15,7 +15,9 @@ class Bureaucrat;
 class Form {
 public:
 	Form(const string& name, const int grade_sign, const int grade_execute);
+	Form(const Form& form);
 	~Form();
+	Form& operator=(const Form& Form);
 
 	const string	getName() const;
 
@@ -27,18 +29,20 @@ public:
 
 	void            beSigned(Bureaucrat& bureaucrat);
 
+	void			setSigned(const bool new_signed);
+
 private:
 	const string	_name;
 	const int		_grade_sign;
 	const int		_grade_execute;
 	bool			_signed;
 
-	class Exception_form {
+	class Exception_form : public std::exception {
 	public:
-		Exception_form(string error);
-		const char* what() const;
+		Exception_form(const char* error);
+		virtual const char* what() const throw();
 	private:
-		string	_error;
+		const char* _error;
 	};
 };
 

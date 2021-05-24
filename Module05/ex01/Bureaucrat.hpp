@@ -1,5 +1,5 @@
-#ifndef EX00_BUREAUCRAT_HPP
-#define EX00_BUREAUCRAT_HPP
+#ifndef EX01_BUREAUCRAT_HPP
+#define EX01_BUREAUCRAT_HPP
 
 #include <iostream>
 #include <ostream>
@@ -15,7 +15,9 @@ class Form;
 class Bureaucrat  {
 public:
 	Bureaucrat(const string& name, int grade);
+	Bureaucrat(const Bureaucrat& bureaucrat);
 	~Bureaucrat();
+	Bureaucrat& operator=(const Bureaucrat& bureaucrat);
 
 	string	getName() const;
 
@@ -25,18 +27,18 @@ public:
 
 	void	increaseRating();
 
-	void    signForm(bool sign, Form& form);
+	void    signForm(Form& form);
 
 private:
 	const string	_name;
 	int				_grade;
 
-	class Exception_bureaucrat {
+	class Exception_bureaucrat : public std::exception {
 	public:
-		Exception_bureaucrat(string error);
-		const char* what() const;
+		Exception_bureaucrat(const char* error);
+		virtual const char* what() const throw();
 	private:
-		string	_error;
+		const char* _error;
 	};
 };
 

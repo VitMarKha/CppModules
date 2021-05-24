@@ -30,13 +30,12 @@ bool Form::getSigned() const { return this->_signed; }
 void Form::beSigned(Bureaucrat &bureaucrat) {
     try {
         if (bureaucrat.getGrade() < this->getGradeSign()) {
-            this->_signed = true;
-            bureaucrat.signForm(this->getSigned(), *this);
+            bureaucrat.signForm(*this);
         }
         else {
-            bureaucrat.signForm(this->getSigned(), *this);
-            throw Exception_form("The bureaucrat's: " + bureaucrat.getName()  \
-                + " score is too low to sign the form: \"" + this->getName() + "\"");
+            string error = "The bureaucrat's: " + bureaucrat.getName()  \
+                + " score is too low to sign the form: \"" + this->getName() + "\"";
+            throw Exception_form(error.c_str());
         }
     }
     catch (Exception_form& exceptionForm) {
@@ -44,9 +43,19 @@ void Form::beSigned(Bureaucrat &bureaucrat) {
     }
 }
 
-Form::Exception_form::Exception_form(string error) : _error(error) {}
+Form::Form(const Form &form)
+	: _name(form.getName()), _grade_sign(form.getGradeSign()), _grade_execute(form.getGradeExecute()), _signed(form.getSigned()) { }
 
-const char *Form::Exception_form::what() const { return this->_error.c_str(); }
+Form &Form::operator=(const Form &form) {
+	this->_signed = form.getSigned();
+	return *this;
+}
+
+void Form::setSigned(const bool new_signed) { this->_signed = new_signed; }
+
+Form::Exception_form::Exception_form(const char* error) : _error(error) {}
+
+const char *Form::Exception_form::what() const throw() { return this->_error; }
 
 ostream& operator<<(ostream& out, const Form& form) {
 	cout << "Form: \"" << form.getName() << "\"" << " is " << form.getSigned() << "her grade sign: " \
