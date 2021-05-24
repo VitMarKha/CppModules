@@ -3,11 +3,14 @@
 
 #include <iostream>
 #include <ostream>
+#include "Form.hpp"
 
 using std::string;
 using std::cout;
 using std::endl;
 using std::ostream;
+
+class Form;
 
 class Bureaucrat  {
 public:
@@ -21,6 +24,8 @@ public:
 	void 	reduceRating();
 
 	void	increaseRating();
+
+	void    signForm(bool sign, Form& form);
 
 private:
 	const string	_name;

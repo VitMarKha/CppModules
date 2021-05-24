@@ -42,6 +42,14 @@ void Bureaucrat::increaseRating() {
 	}
 }
 
+void Bureaucrat::signForm(bool sign, Form& form) {
+    if (sign)
+        cout << "Bureaucrat " << this->getName() << " signs form: \"" << form.getName() << "\"" << endl;
+    else
+        cout << "Bureaucrat " << this->getName() << " cannot sign form: \"" << form.getName() << "\"" \
+        << " because its rating is not suitable" << endl;
+}
+
 Bureaucrat::Exception_bureaucrat::Exception_bureaucrat(string error) : _error(error) { }
 
 const char *Bureaucrat::Exception_bureaucrat::what() const { return this->_error.c_str();; }
