@@ -8,9 +8,10 @@ class ShrubberyCreationForm : public Form {
 public:
     ShrubberyCreationForm(string name);
 
-    void    action();
+    virtual void    execute(const Bureaucrat& executor);
+
 private:
-    const string _name;
+    void    action();
 };
 
 #endif

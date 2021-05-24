@@ -27,6 +27,8 @@ public:
 
 	void    signForm(bool sign, Form& form);
 
+    void    executeForm(Form const & form);
+
 private:
 	const string	_name;
 	int				_grade;

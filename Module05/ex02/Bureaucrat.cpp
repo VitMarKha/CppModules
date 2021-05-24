@@ -50,6 +50,19 @@ void Bureaucrat::signForm(bool sign, Form& form) {
         << " because its rating is not suitable" << endl;
 }
 
+void Bureaucrat::executeForm(const Form &form) {
+    try {
+        if (this->getGrade() < form.getGradeExecute()) {
+            cout << "Bureaucrat " << this->getName() << " executes " << form.getName() << endl;
+//            form.execute(*this);
+        } else
+            throw Exception_bureaucrat("The bureaucrat " + this->getName() + " doesn't have enough points to complete the form");
+    }
+    catch (Exception_bureaucrat exceptionBureaucrat) {
+        cout << exceptionBureaucrat.what() << endl;
+    }
+}
+
 Bureaucrat::Exception_bureaucrat::Exception_bureaucrat(string error) : _error(error) { }
 
 const char *Bureaucrat::Exception_bureaucrat::what() const { return this->_error.c_str();; }

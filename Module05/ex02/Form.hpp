@@ -27,6 +27,8 @@ public:
 
 	void            beSigned(Bureaucrat& bureaucrat);
 
+	virtual void    execute(const Bureaucrat& executor) = 0;
+
     class Exception_form {
     public:
         Exception_form(string error);
@@ -38,7 +40,6 @@ private:
     const string	_name;
     const int		_grade_sign;
     const int		_grade_execute;
-
 	bool			_signed;
 };
 

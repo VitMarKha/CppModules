@@ -7,10 +7,10 @@ class RobotomyRequestForm : public Form {
 public:
     RobotomyRequestForm(string name);
 
-    void    action();
+    virtual void    execute(const Bureaucrat& executor);
 
 private:
-    string _name;
+    void    action();
 };
 
 #endif

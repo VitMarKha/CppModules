@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(string name) : Form(name, 145, 137), _name(name) {}
+ShrubberyCreationForm::ShrubberyCreationForm(string name) : Form(name, 145, 137) { }
 
 void ShrubberyCreationForm::action() {
     try {
@@ -47,6 +47,19 @@ void ShrubberyCreationForm::action() {
             throw Exception_form("ShrubberyCreationForm, couldn't create a file");
     }
     catch (Exception_form& exceptionForm) {
+        cout << exceptionForm.what() << endl;
+    }
+}
+
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) {
+    try {
+        if (this->getSigned() != true)
+            throw Exception_form("Form: " + this->getName() + " not signed");
+        else if (executor.getGrade() > this->getGradeExecute())
+            throw Exception_form("The bureaucrat: " + executor.getName() + " has a low score");
+        this->action();
+    }
+    catch (Exception_form exceptionForm) {
         cout << exceptionForm.what() << endl;
     }
 }
