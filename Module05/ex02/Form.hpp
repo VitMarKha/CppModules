@@ -21,9 +21,9 @@ public:
 
 	const string	getName() const;
 
-	const int		getGradeSign() const;
+	int		getGradeSign() const;
 
-	const int		getGradeExecute() const;
+	int		getGradeExecute() const;
 
 	bool			getSigned() const;
 

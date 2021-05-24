@@ -1,5 +1,5 @@
-#ifndef EX01_FORM_HPP
-#define EX01_FORM_HPP
+#ifndef EX03_FORM_HPP
+#define EX03_FORM_HPP
 
 #include <iostream>
 #include <ostream>
@@ -16,7 +16,7 @@ class Form {
 public:
 	Form(const string& name, const int grade_sign, const int grade_execute);
 	Form(const Form& form);
-	~Form();
+	virtual	~Form();
 	Form& operator=(const Form& Form);
 
 	const string	getName() const;
@@ -31,11 +31,7 @@ public:
 
 	void			setSigned(const bool new_signed);
 
-private:
-	const string	_name;
-	const int		_grade_sign;
-	const int		_grade_execute;
-	bool			_signed;
+	virtual void    execute(const Bureaucrat& executor) = 0;
 
 	class Exception_form : public std::exception {
 	public:
@@ -44,6 +40,12 @@ private:
 	private:
 		const char* _error;
 	};
+private:
+	const string	_name;
+	const int		_grade_sign;
+	const int		_grade_execute;
+
+	bool			_signed;
 };
 
 ostream& operator<<(ostream& out, const Form& form);

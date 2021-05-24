@@ -7,8 +7,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &shrubberyCre
 ShrubberyCreationForm::~ShrubberyCreationForm() { }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &shrubberyCreationForm) {
-    (void)shrubberyCreationForm;
-    return *this;
+	(void)shrubberyCreationForm;
+	return *this;
 }
 
 void ShrubberyCreationForm::action() {

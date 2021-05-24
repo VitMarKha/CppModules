@@ -19,9 +19,9 @@ Form::Form(const string &name, const int grade_sign, const int grade_execute) :
 
 Form::~Form() { }
 
-const int Form::getGradeSign() const { return this->_grade_sign; }
+int Form::getGradeSign() const { return this->_grade_sign; }
 
-const int Form::getGradeExecute() const { return this->_grade_execute; }
+int Form::getGradeExecute() const { return this->_grade_execute; }
 
 const string Form::getName() const { return this->_name; }
 
@@ -58,7 +58,7 @@ Form::Exception_form::Exception_form(const char* error) : _error(error) {}
 const char *Form::Exception_form::what() const throw() { return this->_error; }
 
 ostream& operator<<(ostream& out, const Form& form) {
-	cout << "Form: \"" << form.getName() << "\"" << " is " << form.getSigned() << "her grade sign: " \
-		<< form.getGradeSign()<< "and her grade execute: " << form.getGradeExecute() << endl;
+	cout << "Form: \"" << form.getName() << "\"" << " is " << form.getSigned() << " her grade sign: " \
+		<< form.getGradeSign()<< " and her grade execute: " << form.getGradeExecute() << endl;
 	return out;
 }
