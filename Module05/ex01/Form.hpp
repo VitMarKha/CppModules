@@ -37,9 +37,9 @@ private:
 	const int		_grade_execute;
 	bool			_signed;
 
-	class Exception_form : public std::exception {
+	class ExceptionForm : public std::exception {
 	public:
-		Exception_form(const char* error);
+		ExceptionForm(const char* error);
 		virtual const char* what() const throw();
 	private:
 		const char* _error;

@@ -25,6 +25,10 @@ public:
 
 	void	increaseRating();
 
+private:
+	const string	_name;
+	int				_grade;
+
 	class ExceptionBureaucrat : public std::exception {
 	public:
 		ExceptionBureaucrat(const char* error);
@@ -32,9 +36,6 @@ public:
 	private:
 		const char* _error;
 	};
-private:
-	const string	_name;
-	int				_grade;
 };
 
 ostream& operator<<(ostream& out, const Bureaucrat& bureaucrat);
