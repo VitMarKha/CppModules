@@ -49,8 +49,8 @@ void Bureaucrat::executeForm(const Form& form) {
 		form.execute(*this);
 		cout << "Bureaucrat " << this->getName() << " executes " << form.getName() << endl;
 	}
-	catch (ExceptionBureaucrat exceptionBureaucrat) {
-		cout << exceptionBureaucrat.what() << endl;
+	catch (std::exception& exception) {
+		cout << exception.what() << endl;
 	}
 }
 

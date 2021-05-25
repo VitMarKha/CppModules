@@ -31,15 +31,17 @@ public:
 
 	void			setSigned(const bool new_signed);
 
-	virtual void    execute(const Bureaucrat& executor) = 0;
+	virtual void    execute(const Bureaucrat& executor) const = 0 ;
 
-	class Exception_form : public std::exception {
+protected:
+	class ExceptionForm : public std::exception {
 	public:
-		Exception_form(const char* error);
+		ExceptionForm(const char* error);
 		virtual const char* what() const throw();
 	private:
 		const char* _error;
 	};
+
 private:
 	const string	_name;
 	const int		_grade_sign;

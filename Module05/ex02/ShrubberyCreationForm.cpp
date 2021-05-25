@@ -2,7 +2,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(string name) : Form(name, 145, 137) { }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &shrubberyCreationForm) : Form(shrubberyCreationForm){ }
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &shrubberyCreationForm) : Form(shrubberyCreationForm) { }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() { }
 

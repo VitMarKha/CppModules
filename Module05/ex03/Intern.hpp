@@ -21,9 +21,9 @@ public:
 private:
 	string forms_names[3];
 
-	class Exception_intern : public std::exception {
+	class ExceptionIntern : public std::exception {
 	public:
-		Exception_intern(const char* error);
+		ExceptionIntern(const char* error);
 		virtual const char* what() const throw();
 	private:
 		const char* _error;

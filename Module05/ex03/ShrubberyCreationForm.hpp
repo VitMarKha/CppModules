@@ -11,10 +11,10 @@ public:
     virtual ~ShrubberyCreationForm();
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& shrubberyCreationForm);
 
-    virtual void    execute(const Bureaucrat& executor);
+    virtual void    execute(const Bureaucrat& executor) const;
 
 private:
-    void    action();
+    void    action() const;
 };
 
 #endif

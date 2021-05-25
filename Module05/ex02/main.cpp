@@ -12,6 +12,7 @@ int main() {
 		Form* form = new RobotomyRequestForm("Home");
 		cout << *form;
 		form->execute(*bureaucrat);
+		cout << *form;
 	}
 	catch (std::exception& exception) {
 		cout << exception.what() << endl;

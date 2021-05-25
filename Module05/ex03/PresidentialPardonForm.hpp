@@ -10,10 +10,10 @@ public:
 	virtual ~PresidentialPardonForm();
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& presidentialPardonForm);
 
-    virtual void    execute(const Bureaucrat& executor);
+    virtual void    execute(const Bureaucrat& executor) const;
 
 private:
-    void    action();
+    void    action() const;
 };
 
 #endif

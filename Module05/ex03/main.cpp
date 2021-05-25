@@ -6,15 +6,25 @@
 #include "Intern.hpp"
 
 int main() {
-	Intern	someRandomIntern;
-	Form*	rrf;
-	rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
-	if (rrf != nullptr)
-			cout << *rrf;
-
-	Form*	s;
-	s = someRandomIntern.makeForm("Shrubbery Creation", "Home");
-	if (s != nullptr)
-		cout << *s;
+	cout << "-----------TEST-0-----------" << endl;
+	try {
+		Intern	someRandomIntern;
+		Form*	rrf;
+		rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+		cout << *rrf;
+	}
+	catch (std::exception& exception) {
+		cout << exception.what() << endl;
+	}
+	cout << "-----------TEST-1-----------" << endl;
+	try {
+		Intern	someRandomIntern;
+		Form*	rrf;
+		rrf = someRandomIntern.makeForm("Bla bla", "Bender");
+		cout << *rrf;
+	}
+	catch (std::exception& exception) {
+		cout << exception.what() << endl;
+	}
 	return 0;
 }
