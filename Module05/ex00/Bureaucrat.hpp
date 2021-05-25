@@ -25,17 +25,16 @@ public:
 
 	void	increaseRating();
 
-private:
-	const string	_name;
-	int				_grade;
-
-	class Exception_bureaucrat : public std::exception {
+	class ExceptionBureaucrat : public std::exception {
 	public:
-		Exception_bureaucrat(const char* error);
+		ExceptionBureaucrat(const char* error);
 		virtual const char* what() const throw();
 	private:
 		const char* _error;
 	};
+private:
+	const string	_name;
+	int				_grade;
 };
 
 ostream& operator<<(ostream& out, const Bureaucrat& bureaucrat);
