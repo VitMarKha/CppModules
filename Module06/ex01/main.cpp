@@ -26,9 +26,9 @@ static void* serialize() {
 
 static Data* deserialize(void* raw) {
 	Data *out = new Data;
-	out->one_str = string(static_cast<char*>(raw), 8);
-	out->num = *(static_cast<int*>(raw) + 2);
-	out->two_str = string(static_cast<char*>(raw) + 12, 8);
+	out->one_str = string(reinterpret_cast<char*>(raw), 8);
+	out->num = *(reinterpret_cast<int*>(raw) + 2);
+	out->two_str = string(reinterpret_cast<char*>(raw) + 12, 8);
 	return out;
 }
 
