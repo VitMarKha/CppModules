@@ -8,6 +8,14 @@ using std::string;
 static void printChar(string a) {
 	int c;
 
+	if (a.size() == 1) {
+		if (std::isdigit(a[0])) {
+			cout << "char: Non displayable" << endl;
+			return;
+		}
+		cout << "char: " << "\'" << a << "\'" << endl;
+		return;
+	}
 	try {
 		c = stoi(a);
 		if (c < -127 || c > 127) {
