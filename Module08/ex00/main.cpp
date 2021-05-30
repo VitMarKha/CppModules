@@ -1,6 +1,6 @@
-
 #include "easyfind.hpp"
 #include <vector>
+
 using std::cout;
 using std::endl;
 using std::vector;
@@ -16,7 +16,7 @@ int main() {
         cout << endl;
         int search = 4;
         int num = easyfind(vector, search);
-        cout << search <<" found by index: " << num << endl;
+        cout << "found: " << num << endl;
     }
     cout << "---------TEST-1---------" << endl;
     {
@@ -29,7 +29,7 @@ int main() {
         int search = 28;
         try {
             int num = easyfind(vector, search);
-            cout << search <<" found by index: " << num << endl;
+            cout << " found: " << num << endl;
         }
         catch (std::exception& exception) {
             cout << exception.what() << endl;
