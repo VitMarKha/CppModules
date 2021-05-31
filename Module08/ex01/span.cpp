@@ -1,11 +1,20 @@
 #include "span.hpp"
 
-Span::Span(unsigned int size) : _size(size), _count(0), _nums(size) { }
+Span::Span(unsigned int size) : _size(size), _count(0) { }
+
+Span::Span(const Span &span) { *this = span; }
 
 Span::~Span() { }
 
+Span &Span::operator=(const Span &span) {
+    this->_size = span._size;
+    this->_count = span._count;
+    this->_nums = span._nums;
+    return *this;
+}
+
 void Span::addNumber(const int n) {
-    if (this->_count >= this->_size)
+    if (this->_nums.size() >= this->_size)
         throw ExceptionSpan("LimitExceeded");
     this->_nums.push_back(n);
     ++this->_count;

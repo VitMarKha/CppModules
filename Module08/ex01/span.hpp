@@ -12,7 +12,9 @@ using std::max_element;
 class Span {
 public:
     Span(unsigned int size);
+    Span(const Span& span);
     ~Span();
+    Span& operator=(const Span& span);
 
     void addNumber(const int n);
 
@@ -21,9 +23,9 @@ public:
     int longestSpan();
 
 private:
-    unsigned int    _size;
-    unsigned int    _count;
-    vector<int>     _nums;
+    unsigned int  _size;
+    unsigned int  _count;
+    vector<int>   _nums;
 
     class ExceptionSpan : public std::exception {
     public:
