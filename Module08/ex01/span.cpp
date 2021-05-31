@@ -1,7 +1,7 @@
 #include "span.hpp"
 
 Span::Span(unsigned int size) : _size(size), _count(0) {
-    for (int i = 0; i < this->_size; ++i) {
+    for (unsigned int i = 0; i < this->_size; ++i) {
         this->_nums.push_back(0);
     }
 }
@@ -55,7 +55,7 @@ int Span::longestSpan() {
 }
 
 int Span::operator[](const int index) {
-    if (index < 0 || index > this->_size)
+    if (index < 0 || (const unsigned int)index > this->_size)
         throw ExceptionSpan("GoingOutOfTheArray");
     return this->_nums[index];
 }
