@@ -16,6 +16,8 @@ public:
     ~Span();
     Span& operator=(const Span& span);
 
+    int operator[](const int index);
+
     void addNumber(const int n);
 
     int shortestSpan();

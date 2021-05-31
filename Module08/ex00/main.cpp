@@ -1,9 +1,11 @@
 #include "easyfind.hpp"
 #include <vector>
+#include <set>
 
 using std::cout;
 using std::endl;
 using std::vector;
+using std::set;
 
 int main() {
     cout << "---------TEST-0---------" << endl;
@@ -29,7 +31,24 @@ int main() {
         int search = 28;
         try {
             int num = easyfind(vector, search);
-            cout << " found: " << num << endl;
+            cout << "found: " << num << endl;
+        }
+        catch (std::exception& exception) {
+            cout << exception.what() << endl;
+        }
+    }
+    cout << "---------TEST-2---------" << endl;
+    {
+        set<int> set;
+        for (int i = 0; i < 5; i++) {
+            set.insert(i + 5);
+            cout << i + 5 << " ";
+        }
+        cout << endl;
+        int search = 8;
+        try {
+            int num = easyfind(set, search);
+            cout << "found: " << num << endl;
         }
         catch (std::exception& exception) {
             cout << exception.what() << endl;
